@@ -1,0 +1,38 @@
+doctype html
+html
+  head
+    title index
+    link(rel='stylesheet', href='stylesheets/index1.css')
+    // Latest compiled and minified CSS
+  body
+    .container
+      -if(user.ROLE=="HOD"){
+        .card
+          .card-block
+           a(href='/admin')
+            img.card__img(src="images/"+user.ID+".PNG")
+          .card__description
+            .card__title HOD
+            .card__subtitle
+              | Click here to Access
+      -}
+      -if(user.ROLE=="PRINCIPAL"){
+        .card
+          .card-block
+           a(href='/admin1')
+            img.card__img(src="images/"+user.ID+".PNG")
+          .card__description
+            .card__title PRINCIPAL
+            .card__subtitle
+              | Click here to Access
+      -}
+      -if((user.ROLE=="VICECHAIRMAN") || (user.ROLE=="ADMIN")){
+        .card
+          .card-block
+           a(href='/admin2')
+            img.card__img(src="images/"+user.ID+".jpg")
+          .card__description
+            .card__title VICE-CHAIRMAN
+            .card__subtitle
+              | Click to Access
+      -}

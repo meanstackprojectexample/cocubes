@@ -1,0 +1,164 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Home Page
+    // Custom fonts for this template
+    link(href='javascripts/vendor/fontawesome-free/css/all.min.css', rel='stylesheet', type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i', rel='stylesheet')
+    // Custom styles for this template
+    link(href='stylesheets/css/sb-admin-2.min.css', rel='stylesheet')
+    style.
+      .a{
+         display:none;
+      }
+  body#page-top
+    // Page Wrapper
+    #wrapper
+      // Sidebar
+      ul#accordionSidebar.navbar-nav.bg-gradient-primary.sidebar.sidebar-dark.accordion
+        // Sidebar - Brand
+        a.sidebar-brand.d-flex.align-items-center.justify-content-center(href='')
+          .sidebar-brand-icon.rotate-n-15
+            i.fa.fa-graduation-cap
+          .sidebar-brand-text.mx-3 COCUBES 
+        // Divider
+        hr.sidebar-divider.my-0
+        // Nav Item - Dashboard
+        li.nav-item
+          a.nav-link(href='/admin')
+            i.fas.fa-home
+            span Home
+        // Divider
+        hr.sidebar-divider
+        // Heading
+        .sidebar-heading
+          | Interface
+        // Nav Item - Pages Collapse Menu
+        li.nav-item
+          a.nav-link.collapsed(href='#', data-toggle='collapse', data-target='#collapseTwo', aria-expanded='true', aria-controls='collapseTwo')
+            i.fas.fa-fw.fa-cog
+            span  Select Years
+          #collapseTwo.collapse(aria-labelledby='headingTwo', data-parent='#accordionSidebar')
+            .bg-white.py-2.collapse-inner.rounded
+              h6.collapse-header Year Wise
+              a.collapse-item(href='/finalyear') IV Year
+              a.collapse-item(href='/thirdyear') III YEAR
+              a.collapse-item(href='/secondyear') II YEAR
+        // Nav Item - Utilities Collapse Menu
+        // Divider
+        hr.sidebar-divider
+        // Heading
+        // Nav Item - Pages Collapse Menu
+        // Nav Item - Charts
+        li.nav-item
+          a.nav-link(href='/statistics')
+            i.fas.fa-fw.fa-chart-area
+            span statistics
+        // Nav Item - Tables
+        li.nav-item
+          a.nav-link(href='/tables')
+            i.fas.fa-fw.fa-table
+            span Tables
+        li.nav-item
+          a.nav-link(href='/role')
+            i.fas.fa-fw.fa-table
+            span Role
+
+        // Divider
+        hr.sidebar-divider.d-none.d-md-block
+        // Sidebar Toggler (Sidebar)
+        .text-center.d-none.d-md-inline
+          button#sidebarToggle.rounded-circle.border-0
+      // End of Sidebar
+      // Content Wrapper
+      #content-wrapper.d-flex.flex-column
+        // Main Content
+        #content
+          // Topbar
+          nav.navbar.navbar-expand.navbar-light.bg-white.topbar.mb-4.static-top.shadow
+            img(style="width:120px" src='images/logo.png') 
+            
+            
+            ul.navbar-nav.ml-auto
+                .topbar-divider.d-none.d-sm-block
+              
+              
+            li.nav-item.dropdown.no-arrow
+                a#userDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                  span.mr-2.d-none.d-lg-inline.text-gray-600.small
+                  p #{user.NAME}
+                  img.img-profile.rounded-circle(src="images/"+user.ID+".PNG")
+                // Dropdown - User Information
+                .dropdown-menu.dropdown-menu-right.shadow.animated--grow-in(aria-labelledby='userDropdown')
+                  a.dropdown-item(href='#')
+                    i.fas.fa-user.fa-sm.fa-fw.mr-2.text-gray-400
+                    |   Profile
+                  a.dropdown-item(href='#')
+                    i.fas.fa-cogs.fa-sm.fa-fw.mr-2.text-gray-400
+                    |     Settings
+                  a.dropdown-item(href='/changepassword')
+                    i.fas.fa-list.fa-sm.fa-fw.mr-2.text-gray-400
+                    |       Change Password
+                  .dropdown-divider
+                  a.dropdown-item(href='/logout')
+                    i.fas.fa-sign-out-alt.fa-sm.fa-fw.mr-2.text-gray-400
+                    |       Logout
+          // End of Topbar
+          // Begin Page Content
+          .container-fluid
+            // Page Heading
+           
+            p.mb-4
+              |  The Below analysis for Second Year students Subjects-Wise.
+               
+            // Content Row
+            .row
+              .col-xl-12.col-lg-4
+                // Area Chart
+                .card.shadow.mb-4
+                  .card-header.py-3
+                    h4.m-0.font-weight-bold.text-primary  SecondYear
+                  .card-body
+                    .chart-area(style='height: 300px;')
+                      canvas#myAreaChart
+                    hr
+                    
+                    .row
+                      b.col-md-12(style='color: #17a673 ')
+                        table
+                          tr 
+                            td(style="padding-left:80px;") Apitude: 
+                            td(style='color: blue') #{perc}% 
+                            td(style="padding-left:120px;") Reasoning:
+                            td(style='color: blue') #{perc1}%
+                            td(style="padding-left:150px;") English: 
+                            td(style='color: blue ') #{perc2}% 
+                            td(style="padding-left:140px;") Coding: 
+                            td(style='color: blue ') #{perc3}% 
+                              
+                              
+
+                    input#apt2.a(type="text" value=perc )
+                    input#res2.a(type="text" value=perc1 )
+                    input#cod2.a(type="text" value=perc2)
+                    input#eng2.a(type="text" value=perc3)
+            // End of Main Content
+           
+            
+            
+            // Bootstrap core JavaScript
+            script(src='javascripts/vendor/jquery/jquery.min.js')
+            script(src='javascripts/vendor/bootstrap/js/bootstrap.bundle.min.js')
+            // Core plugin JavaScript
+            script(src='javascripts/vendor/jquery-easing/jquery.easing.min.js')
+            // Custom scripts for all pages
+            script(src='javascripts/js/sb-admin-2.min.js')
+            // Page level plugins
+            script(src='javascripts/vendor/chart.js/Chart.min.js')
+            // Page level custom scripts
+            script(src='javascripts/js/demo/secondarea.js')

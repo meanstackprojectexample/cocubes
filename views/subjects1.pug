@@ -1,0 +1,222 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Home Page
+    // Custom fonts for this template
+    link(href='javascripts/vendor/fontawesome-free/css/all.min.css', rel='stylesheet', type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i', rel='stylesheet')
+    // Custom styles for this template
+    link(href='stylesheets/css/sb-admin-2.min.css', rel='stylesheet')
+    style.
+      .a{
+      display:none;
+      }
+  body#page-top
+    // Page Wrapper
+    #wrapper
+      // Sidebar
+      ul#accordionSidebar.navbar-nav.bg-gradient-primary.sidebar.sidebar-dark.accordion
+        // Sidebar - Brand
+        a.sidebar-brand.d-flex.align-items-center.justify-content-center(href='')
+          .sidebar-brand-icon.rotate-n-15
+            i.fa.fa-graduation-cap
+          .sidebar-brand-text.mx-3 COCUBES 
+        // Divider
+        hr.sidebar-divider.my-0
+        // Nav Item - Dashboard
+        li.nav-item
+          a.nav-link(href='/admin1')
+            i.fas.fa-home
+            span Home
+        // Divider
+        hr.sidebar-divider
+        // Heading
+        .sidebar-heading
+          | Interface
+        // Nav Item - Pages Collapse Menu
+        li.nav-item
+          a.nav-link.collapsed(href='#', data-toggle='collapse', data-target='#collapseTwo', aria-expanded='true', aria-controls='collapseTwo')
+            i.fas.fa-fw.fa-cog
+            span  Select Branch
+          #collapseTwo.collapse(aria-labelledby='headingTwo', data-parent='#accordionSidebar')
+            .bg-white.py-2.collapse-inner.rounded
+              h6.collapse-header Branch Wise
+              a.collapse-item(href='/ece') ECE
+              a.collapse-item(href='/cse') CSE
+              a.collapse-item(href='/it') IT
+              a.collapse-item(href='/eee') EEE
+              a.collapse-item(href='/mech') MECH
+              a.collapse-item(href='/civil') CIVIL
+        // Nav Item - Utilities Collapse Menu
+        // Divider
+        hr.sidebar-divider
+        // Heading
+        // Nav Item - Pages Collapse Menu
+        // Nav Item - Charts
+        li.nav-item
+          a.nav-link(href='/statistics1')
+            i.fas.fa-fw.fa-chart-area
+            span Statistics
+        // Nav Item - Tables
+        li.nav-item
+          a.nav-link(href='/tables1')
+            i.fas.fa-fw.fa-table
+            span Tables
+        // Divider
+        hr.sidebar-divider.d-none.d-md-block
+        // Sidebar Toggler (Sidebar)
+        .text-center.d-none.d-md-inline
+          button#sidebarToggle.rounded-circle.border-0
+      // End of Sidebar
+      // Content Wrapper
+      #content-wrapper.d-flex.flex-column
+        // Main Content
+        #content
+          // Topbar
+          nav.navbar.navbar-expand.navbar-light.bg-white.topbar.mb-4.static-top.shadow
+            img(style="width:120px" src='public/images/logo.png')
+            // Topbar Navbar
+            ul.navbar-nav.ml-auto
+              // Nav Item - Search Dropdown (Visible Only XS)
+              .topbar-divider.d-none.d-sm-block
+              // Nav Item - User Information
+              li.nav-item.dropdown.no-arrow
+                a#userDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                  span.mr-2.d-none.d-lg-inline.text-gray-600.small
+                  p #{user.NAME}
+                  img.img-profile.rounded-circle(src="images/"+user.ID+".PNG")
+                // Dropdown - User Information
+                .dropdown-menu.dropdown-menu-right.shadow.animated--grow-in(aria-labelledby='userDropdown')
+                  a.dropdown-item(href='#')
+                    i.fas.fa-user.fa-sm.fa-fw.mr-2.text-gray-400
+                    |   Profile
+                  a.dropdown-item(href='#')
+                    i.fas.fa-cogs.fa-sm.fa-fw.mr-2.text-gray-400
+                    |     Settings
+                  a.dropdown-item(href='/changepassword')
+                    i.fas.fa-list.fa-sm.fa-fw.mr-2.text-gray-400
+                    |       Change Password
+                  .dropdown-divider
+                  a.dropdown-item(href='#', data-toggle='modal', data-target='#logoutModal')
+                    i.fas.fa-sign-out-alt.fa-sm.fa-fw.mr-2.text-gray-400
+                    |       Logout
+          // End of Topbar
+          // Begin Page Content
+          .container-fluid
+            // Page Heading
+           
+            p.mb-4
+              | Chart.
+              
+            // Content Row
+            .row
+              .col-xl-6.col-lg-4(style='margin:auto')
+                // Area Chart
+                .card.shadow.mb-4
+                  .card-header.py-3
+                    h4.m-0.font-weight-bold.text-primary II-Year
+                  .card-body
+                    .chart-area(style='height: 300px;')
+                      canvas#myBarChart1
+                    hr
+                    .row
+                      b.col-md-12(style='color: #17a673 ')
+                        table
+                          tr 
+                            td(style="padding-left:0px;") Apititude: 
+                            td(style="color:blue") #{per}%
+                            td(style="padding-left:10px;") Reasoning:
+                            td(style="color:blue") #{per1}%
+                            td(style="padding-left:10px;") English:
+                            td(style="color:blue") #{per2}%
+                            td(style="padding-left:10px;") Coding:
+                            td(style="color:blue") #{per3}%
+                    |        
+                    input#apt2.a(type="text" value=per)
+                    input#res2.a(type="text" value=per1)
+                    input#cod2.a(type="text" value=per2)
+                    input#eng2.a(type="text" value=per3)
+            .row
+              .col-xl-6.col-lg-4(style='margin:auto')
+                // Area Chart
+                .card.shadow.mb-4
+                  .card-header.py-3
+                    h4.m-0.font-weight-bold.text-primary III-Year
+                  .card-body
+                    .chart-area(style='height: 300px;')
+                      canvas#myBarChart3
+                    hr
+                    .row
+                      b.col-md-12(style='color: #17a673 ')
+                        table
+                          tr 
+                            td(style="padding-left:0px;") Apititude: 
+                            td(style="color:blue") #{per4}%
+                            td(style="padding-left:10px;") Reasoning:
+                            td(style="color:blue") #{per5}%
+                            td(style="padding-left:10px;") English:
+                            td(style="color:blue") #{per6}%
+                            td(style="padding-left:10px;") Coding:
+                            td(style="color:blue") #{per7}%
+                    |         
+                    input#apt3.a(type="text" value=per4)
+                    input#res3.a(type="text" value=per5)
+                    input#cod3.a(type="text" value=per6)
+                    input#eng3.a(type="text" value=per7)
+            .row
+              .col-xl-6.col-lg-4(style='margin:auto')
+                // Area Chart
+                .card.shadow.mb-4
+                  .card-header.py-3
+                    h4.m-0.font-weight-bold.text-primary IV-Year
+                  .card-body
+                    .chart-area(style='height: 300px;')
+                      canvas#myBarChart5
+                    hr
+                    .row
+                      b.col-md-12(style='color: #17a673 ')
+                        table
+                          tr 
+                            td(style="padding-left:0px;") Apititude: 
+                            td(style="color:blue") #{per8}%
+                            td(style="padding-left:10px;") Reasoning:
+                            td(style="color:blue") #{per9}%
+                            td(style="padding-left:10px;") English:
+                            td(style="color:blue") #{per10}%
+                            td(style="padding-left:10px;") Coding:
+                            td(style="color:blue") #{per11}%
+                    |        
+                    input#apt4.a(type="text" value=per8)
+                    input#res4.a(type="text" value=per9)
+                    input#cod4.a(type="text" value=per10)
+                    input#eng4.a(type="text" value=per11)
+
+            // End of Main Content
+            // Footer
+            // End of Footer
+            // End of Content Wrapper
+            //
+              End
+              <!-- End of Main Content
+            // Footer
+            
+            // Scroll to Top Button
+            a.scroll-to-top.rounded(href='#page-top')
+              i.fas.fa-angle-up
+            // Logout Modal
+            // Bootstrap core JavaScript
+            script(src='javascripts/vendor/jquery/jquery.min.js')
+            script(src='javascripts/vendor/bootstrap/js/bootstrap.bundle.min.js')
+            // Core plugin JavaScript
+            script(src='javascripts/vendor/jquery-easing/jquery.easing.min.js')
+            // Custom scripts for all pages
+            script(src='javascripts/js/sb-admin-2.min.js')
+            // Page level plugins
+            script(src='javascripts/vendor/chart.js/Chart.min.js')
+            // Page level custom scripts
+            script(src='javascripts/js/demo/subjects.js')

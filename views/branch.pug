@@ -1,0 +1,278 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Branches
+    // Custom fonts for this template
+    link(href='javascripts/vendor/fontawesome-free/css/all.min.css', rel='stylesheet', type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i', rel='stylesheet')
+    // Custom styles for this template
+    link(href='stylesheets/css/sb-admin-2.min.css', rel='stylesheet')
+    style.
+      .a{
+       display:none;
+      }
+  body#page-top
+    // Page Wrapper
+    #wrapper
+      // Sidebar
+      ul#accordionSidebar.navbar-nav.bg-gradient-primary.sidebar.sidebar-dark.accordion
+        // Sidebar - Brand
+        a.sidebar-brand.d-flex.align-items-center.justify-content-center(href='')
+          .sidebar-brand-icon.rotate-n-15
+            i.fa.fa-graduation-cap
+          .sidebar-brand-text.mx-3 COCUBES 
+        // Divider
+        hr.sidebar-divider.my-0
+        // Nav Item - Dashboard
+        li.nav-item
+          a.nav-link(href='/admin2')
+            i.fas.fa-home
+            span Home
+        // Divider
+        hr.sidebar-divider
+        // Heading
+        .sidebar-heading
+          | Interface
+        // Nav Item - Pages Collapse Menu
+        li.nav-item
+          a.nav-link.collapsed(href='#', data-toggle='collapse', data-target='#collapseTwo', aria-expanded='true', aria-controls='collapseTwo')
+            i.fas.fa-fw.fa-cog
+            span  Statistics
+          #collapseTwo.collapse(aria-labelledby='headingTwo', data-parent='#accordionSidebar')
+            .bg-white.py-2.collapse-inner.rounded
+              h6.collapse-header Overall comparision
+              a.collapse-item(href='/college') Colleges
+              a.collapse-item(href='/branch') Branches
+              a.collapse-item(href='/year') Years
+        // Nav Item - Utilities Collapse Menu
+        // Nav Item - Pages Collapse Menu
+        // Divider
+        hr.sidebar-divider
+        // Heading
+        // Nav Item - Pages Collapse Menu
+        // Nav Item - Charts
+        li.nav-item
+          a.nav-link(href='/charts2')
+            i.fas.fa-fw.fa-chart-area
+            span Charts
+        // Nav Item - Tables
+        li.nav-item
+          a.nav-link(href='/tables2')
+            i.fas.fa-fw.fa-table
+            span Tables
+        li.nav-item
+          a.nav-link(href='/role2')
+            i.fas.fa-fw.fa-table
+            span Role    
+        // Divider
+        hr.sidebar-divider.d-none.d-md-block
+        // Sidebar Toggler (Sidebar)
+        .text-center.d-none.d-md-inline
+          button#sidebarToggle.rounded-circle.border-0
+      // End of Sidebar
+      // Content Wrapper
+      #content-wrapper.d-flex.flex-column
+        // Main Content
+        #content
+          // Topbar
+          nav.navbar.navbar-expand.navbar-light.bg-white.topbar.mb-4.static-top.shadow
+            
+            img(style="width:120px" src='images/logo.png') 
+            
+            
+            
+           
+            ul.navbar-nav.ml-auto
+              // Nav Item - Messages
+              .topbar-divider.d-none.d-sm-block
+              li.nav-item.dropdown.no-arrow
+                a#userDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                  span.mr-2.d-none.d-lg-inline.text-gray-600.small
+                  p #{user.NAME}
+                  img.img-profile.rounded-circle(src="images/"+user.ID+".JPG")
+                // Dropdown - User Information
+                .dropdown-menu.dropdown-menu-right.shadow.animated--grow-in(aria-labelledby='userDropdown')
+                  a.dropdown-item(href='#')
+                    i.fas.fa-user.fa-sm.fa-fw.mr-2.text-gray-400
+                    |                         Profile
+                  a.dropdown-item(href='#')
+                    i.fas.fa-cogs.fa-sm.fa-fw.mr-2.text-gray-400
+                    |                         Settings
+                  a.dropdown-item(href='/changepassword')
+                    i.fas.fa-list.fa-sm.fa-fw.mr-2.text-gray-400
+                    |       Change Password
+                  .dropdown-divider
+                  a.dropdown-item(href='/logout')
+                    i.fas.fa-sign-out-alt.fa-sm.fa-fw.mr-2.text-gray-400
+                    |                         Logout
+          // End of Topbar
+          // Begin Page Content
+          .container-fluid
+            // Page Heading
+           
+            p.mb-4
+              | The   Analysis for College Wise Performance and Branch Wise .
+            // Content Row
+            .row
+              .col-xl-4.col-lg-4
+                // Area Chart
+                .card.shadow.mb-4
+                  .card-header.py-3
+                    h4.m-0.font-weight-bold.text-primary ECE
+                  .card-body
+                    .chart-area(style='height: 300px;')
+                      canvas#myBarChart1
+                    hr
+                    .row
+                      b.col-md-12(style='color: #17a673')
+                        table
+                          tr 
+                            td(style="padding-left:0px;") AEC: 
+                            td(style='color: blue') #{per1}% 
+                            td(style="padding-left:10px;") ACET:
+                            td(style='color: blue') #{per2}%
+                            td(style="padding-left:20px;") ACOE:
+                            td(style='color: blue') #{per3}%
+                    |                         
+                    input#present1.a(type="text" value=per1)
+                    input#present2.a(type="text" value=per2)
+                    input#present3.a(type="text" value=per3)
+              .col-xl-4.col-lg-4
+                .card.shadow.mb-4
+                  .card-header.py-3
+                    h4.m-0.font-weight-bold.text-primary CSE
+                  .card-body
+                    .chart-area(style='height: 300px;')
+                      canvas#myBarChart2
+                    hr
+                    .row
+                      b.col-md-12(style='color: #17a673')
+                        table
+                          tr 
+                            td(style="padding-left:0px;") AEC: 
+                            td(style='color: blue') #{per4}%
+                            td(style="padding-left:10px;") ACET:
+                            td(style='color: blue') #{per5}%
+                            td(style="padding-left:20px;") ACOE:
+                            td(style='color: blue') #{per6}%
+                    |                        
+                    input#present4.a(type="text" value=per4)
+                    input#present5.a(type="text" value=per5)
+                    input#present6.a(type="text" value=per6)
+              .col-xl-4.col-lg-4
+                .card.shadow.mb-4
+                  .card-header.py-3
+                    h4.m-0.font-weight-bold.text-primary IT
+                  .card-body
+                    .chart-area(style='height: 300px;')
+                      canvas#myBarChart3
+                    hr
+                    .row
+                      b.col-md-12(style='color: #17a673')
+                        table
+                          tr 
+                            td(style="padding-left:0px;") AEC: 
+                            td(style='color: blue') #{per7}%
+                            td(style="padding-left:10px;") ACET:
+                            td(style='color: blue') #{per8}%
+                            td(style="padding-left:20px;") ACOE:
+                            td(style='color: blue') #{per9}%
+                    |                        
+                    input#present7.a(type="text" value=per7)
+                    input#present8.a(type="text" value=per8)
+                    input#present9.a(type="text" value=per9)
+            .row
+              .col-xl-4.col-lg-4
+                // Area Chart
+                .card.shadow.mb-4
+                  .card-header.py-3
+                    h4.m-0.font-weight-bold.text-primary EEE
+                  .card-body
+                    .chart-area(style='height: 300px;')
+                      canvas#myBarChart4
+                    hr
+                    .row
+                      b.col-md-12(style='color: #17a673')
+                        table
+                          tr 
+                            td(style="padding-left:0px;") AEC: 
+                            td(style='color: blue') #{per10}% 
+                            td(style="padding-left:10px;") ACET:
+                            td(style='color: blue') #{per11}%
+                            td(style="padding-left:20px;") ACOE:
+                            td(style='color: blue') #{per12}%
+
+                    |                        
+                    input#present10.a(type="text" value=per10)
+                    input#present11.a(type="text" value=per11)
+                    input#present12.a(type="text" value=per12)
+              .col-xl-4.col-lg-4
+                .card.shadow.mb-4
+                  .card-header.py-3
+                    h4.m-0.font-weight-bold.text-primary CIVIL
+                  .card-body
+                    .chart-area(style='height: 300px;')
+                      canvas#myBarChart5
+                    hr
+                    .row
+                      b.col-md-12(style='color: #17a673')
+                        table
+                          tr 
+                            td(style="padding-left:0px;") AEC: 
+                            td(style='color: blue') #{per13}%
+                            td(style="padding-left:10px;") ACET:
+                            td(style='color: blue') #{per14}%
+                            td(style="padding-left:20px;") ACOE:
+                            td(style='color: blue') #{per15}%
+                    |                        
+                    input#present13.a(type="text" value=per13)
+                    input#present14.a(type="text" value=per14)
+                    input#present15.a(type="text" value=per15)
+              .col-xl-4.col-lg-4
+                .card.shadow.mb-4
+                  .card-header.py-3
+                    h4.m-0.font-weight-bold.text-primary MECH
+                  .card-body
+                    .chart-area(style='height: 300px;')
+                      canvas#myBarChart6
+                    hr
+                    .row
+                      b.col-md-12(style='color: #17a673')
+                        table
+                          tr 
+                            td(style="padding-left:0px;") AEC: 
+                            td(style='color: blue') #{per16}%
+                            td(style="padding-left:10px;") ACET:
+                            td(style='color: blue') #{per17}%
+                            td(style="padding-left:20px;") ACOE:
+                            td(style='color: blue') #{per18}%
+
+                    |                        
+                    input#present16.a(type="text" value=per16)
+                    input#present17.a(type="text" value=per17)
+                    input#present18.a(type="text" value=per18)
+            // End of Main Content
+            // Footer
+            // End of Footer
+            // End of Content Wrapper
+            // End of Page Wrapper
+            // Scroll to Top Button
+            a.scroll-to-top.rounded(href='#page-top')
+              i.fas.fa-angle-up
+            // Logout Modal
+            // Bootstrap core JavaScript
+            script(src='javascripts/vendor/jquery/jquery.min.js')
+            script(src='javascripts/vendor/bootstrap/js/bootstrap.bundle.min.js')
+            // Core plugin JavaScript
+            script(src='javascripts/vendor/jquery-easing/jquery.easing.min.js')
+            // Custom scripts for all pages
+            script(src='javascripts/js/sb-admin-2.min.js')
+            // Page level plugins
+            script(src='javascripts/vendor/chart.js/Chart.min.js')
+            // Page level custom scripts
+            script(src='javascripts/js/demo/branch.js')

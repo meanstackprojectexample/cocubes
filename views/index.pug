@@ -1,0 +1,26 @@
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width')
+    link(rel='stylesheet', href='stylesheets/index.css')
+  body
+    form(method='post', action='/index1')
+      .container
+        .login-form
+          h2 ADITYA
+          hr.to-right
+          hr.to-left
+          .container-login
+            label Username
+            input(type='text', name='username', placeholder='Employee Id', maxlength='5', required='auto-focus')
+            label Password
+            input(type='Password', name='password', placeholder='Password', required='auto-focus')
+            //- label Role
+            //- select(name='Role')
+            //-   option --select--
+            //-   option(value='PRINCIPAL') Principal
+            //-   option(value='HOD') Hod
+            //-   option(value='VICE-CHAIRMAN') Vicechairman
+            button(type='submit', name='submit', value='LOGIN', required='', href='index1') LOGIN
+            .login-footer
+              a.fa.fa-exclamation-circle(href='forgot') Forgot your password ?

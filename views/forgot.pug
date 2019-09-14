@@ -1,0 +1,16 @@
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width')
+    link(rel='stylesheet', href='stylesheets/forgot.css')
+  body
+    // login div
+    .login
+      // login header
+      h1#header FORGET-PASSWORD
+      // start da login goodness
+      form#form(action='/forgot', method='post')
+        input(type='email', placeholder='Enter your email', name='name', required='auto-focus', maxlength='100')
+        br
+        input(type='submit', value='submit', required='')
+        p  Note:Enter Official Email Address

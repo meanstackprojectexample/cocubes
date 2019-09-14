@@ -1,0 +1,175 @@
+html
+  head
+    title Home Page
+    // Custom fonts for this template
+    link(href='javascripts/vendor/fontawesome-free/css/all.min.css', rel='stylesheet', type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i', rel='stylesheet')
+    // Custom styles for this template
+    link(href='stylesheets/css/sb-admin-2.min.css', rel='stylesheet')
+  body#page-top
+    // Page Wrapper
+    #wrapper
+      // Sidebar
+      ul#accordionSidebar.navbar-nav.bg-gradient-primary.sidebar.sidebar-dark.accordion
+        // Sidebar - Brand
+        a.sidebar-brand.d-flex.align-items-center.justify-content-center(href='')
+          .sidebar-brand-icon.rotate-n-15
+            i.fa.fa-graduation-cap
+          .sidebar-brand-text.mx-3 COCUBES 
+        // Divider
+        hr.sidebar-divider.my-0
+        // Nav Item - Dashboard
+        li.nav-item
+          a.nav-link(href='/admin1')
+            i.fas.fa-home
+            span Home
+        // Divider
+        hr.sidebar-divider
+        // Heading
+        .sidebar-heading
+          | Interface
+        // Nav Item - Pages Collapse Menu
+        li.nav-item
+          a.nav-link.collapsed(href='#', data-toggle='collapse', data-target='#collapseTwo', aria-expanded='true', aria-controls='collapseTwo')
+            i.fas.fa-fw.fa-cog
+            span  Select Branch
+          #collapseTwo.collapse(aria-labelledby='headingTwo', data-parent='#accordionSidebar')
+            .bg-white.py-2.collapse-inner.rounded
+              h6.collapse-header Branch Wise
+              a.collapse-item(href='/ece') ECE
+              a.collapse-item(href='/cse') CSE
+              a.collapse-item(href='/it') IT
+              a.collapse-item(href='/eee') EEE
+              a.collapse-item(href='/mech') MECH
+              a.collapse-item(href='/civil') CIVIL
+        // Nav Item - Utilities Collapse Menu
+        // Divider
+        hr.sidebar-divider
+        // Heading
+        // Nav Item - Pages Collapse Menu
+        // Nav Item - Charts
+        li.nav-item
+          a.nav-link(href='/statistics1')
+            i.fas.fa-fw.fa-chart-area
+            span Statistics
+        // Nav Item - Tables
+        li.nav-item
+          a.nav-link(href='/tables1')
+            i.fas.fa-fw.fa-table
+            span Tables
+        li.nav-item
+          a.nav-link(href='/role1')
+            i.fas.fa-fw.fa-table
+            span Role
+        // Divider
+        hr.sidebar-divider.d-none.d-md-block
+        // Sidebar Toggler (Sidebar)
+        .text-center.d-none.d-md-inline
+          button#sidebarToggle.rounded-circle.border-0
+      // End of Sidebar
+      // Content Wrapper
+      #content-wrapper.d-flex.flex-column
+        // Main Content
+        #content
+          // Topbar
+          nav.navbar.navbar-expand.navbar-light.bg-white.topbar.mb-4.static-top.shadow
+            img(style="width:120px" src='images/logo.png')
+            // Topbar Navbar
+            ul.navbar-nav.ml-auto
+              // Nav Item - Search Dropdown (Visible Only XS)
+              .topbar-divider.d-none.d-sm-block
+              // Nav Item - User Information
+              li.nav-item.dropdown.no-arrow
+                a#userDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                  span.mr-2.d-none.d-lg-inline.text-gray-600.small
+                  p #{user.NAME}
+                  img.img-profile.rounded-circle(src="images/"+user.ID+".PNG")
+                // Dropdown - User Information
+                .dropdown-menu.dropdown-menu-right.shadow.animated--grow-in(aria-labelledby='userDropdown')
+                  a.dropdown-item(href='#')
+                    i.fas.fa-user.fa-sm.fa-fw.mr-2.text-gray-400
+                    |                     Profile
+                  a.dropdown-item(href='#')
+                    i.fas.fa-cogs.fa-sm.fa-fw.mr-2.text-gray-400
+                    |                       Settings
+                  a.dropdown-item(href='/changepassword')
+                    i.fas.fa-list.fa-sm.fa-fw.mr-2.text-gray-400
+                    |       Change Password
+                  .dropdown-divider
+                  a.dropdown-item(href='/logout')
+                    i.fas.fa-sign-out-alt.fa-sm.fa-fw.mr-2.text-gray-400
+                    |                         Logout
+          // End of Topbar
+          // Begin Page Content
+          .container-fluid
+            // Page Heading
+            h1.h3.mb-2.text-gray-800 Charts
+            // Content Row
+            .row
+              // Earnings (Monthly) Card Example
+              .col-xl-6.col-md-6.mb-4
+                .card.border-left-primary.shadow.h-100.py-2
+                  .card-header
+                    h4 Year Statistics
+                  .card-body
+                    .row.no-gutters.align-items-center
+                      .col.mr-2
+                        h4 CIVIL
+                        .text-xs.font-weight-bold.text-primary.text-uppercase.mb-1 
+                        .h5.mb-0.font-weight-bold.text-gray-800 
+                      .col-auto
+                        i.fas.fa-university.fa-2x.text-gray-300
+                  .card-footer
+                    .row.no-gutters.align-items-center
+                      .col.mr-2
+                        .h5.mb-0.font-weight-bold.text-gray-800
+                          a(href='/charts1/'+'CIVIL') Click here
+                      .col-auto
+                        a(href='/charts1/'+'CIVIL')
+                          i.fas.fa-arrow-right.fa-2x.text-primary-300
+              // Earnings (Monthly) Card Example
+              .col-xl-6.col-md-6.mb-4
+                .card.border-left-primary.shadow.h-100.py-2
+                  .card-header
+                    h4 Subject Statistics
+                  .card-body
+                    .row.no-gutters.align-items-center
+                      .col.mr-2
+                        h4 CIVIL
+                        .text-xs.font-weight-bold.text-primary.text-uppercase.mb-1 
+                        .h5.mb-0.font-weight-bold.text-gray-800 
+                      .col-auto
+                        i.fas.fa-university.fa-2x.text-gray-300
+                  .card-footer
+                    .row.no-gutters.align-items-center
+                      .col.mr-2
+                        .h5.mb-0.font-weight-bold.text-gray-800
+                          a(href='/subjects1/'+'CIVIL') Click here
+                      .col-auto
+                        a(href='/subjects1/'+'CIVIL')
+                          i.fas.fa-arrow-right.fa-2x.text-primary-300
+              // Pending Requests Card Example
+              // End of Main Content
+              // Footer
+              footer.sticky-footer.bg-white
+                .container.my-auto
+                  .copyright.text-center.my-auto
+                    span Copyright © Your Website 2019
+              // End of Footer
+              // End of Content Wrapper
+              // End of Page Wrapper
+              // Scroll to Top Button
+              a.scroll-to-top.rounded(href='#page-top')
+                i.fas.fa-angle-up
+              // Logout Modal
+              // Bootstrap core JavaScript
+              script(src='javascripts/vendor/jquery/jquery.min.js')
+              script(src='javascripts/vendor/bootstrap/js/bootstrap.bundle.min.js')
+              // Core plugin JavaScript
+              script(src='javascripts/vendor/jquery-easing/jquery.easing.min.js')
+              // Custom scripts for all pages
+              script(src='javascripts/js/sb-admin-2.min.js')
+              // Page level plugins
+              script(src='javascripts/vendor/chart.js/Chart.min.js')
+              // Page level custom scripts
+              script(src='javascripts/js/demo/homepage1.js')
