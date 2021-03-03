@@ -20,7 +20,7 @@
     "nodemailer": "^6.2.1",
     "nodemon": "^1.19.1",
     "path": "^0.12.7",
-    "pug": "^2.0.3",
+    "pug": "^3.0.1",
     "randomstring": "^1.1.5",
     "xls-to-json": "^0.5.2",
     "xlsx-to-json": "^0.3.0"
